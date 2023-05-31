@@ -75,11 +75,14 @@ header{
 
 
 @media only screen and (max-width: 425px){
-    header{
+    .login{
+     height: 100vh;
+    }
+    
+     header{
       height:30vh;
 
-     border-bottom-left-radius: 120px;
-     border:1px solid red;
+     border-bottom-left-radius: 80px;
     }
     .login-box{
      height:70vh;
