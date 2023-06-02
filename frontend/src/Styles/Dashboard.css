@@ -1,0 +1,43 @@
+
+   
+   .dateupdate {
+     appearance: none;
+     padding: 10px;
+     border: 1px solid #ccc;
+     border-radius: 4px;
+   }
+   
+   .dateupdate::-webkit-calendar-container {
+     font-family: Arial, sans-serif;
+     border: 1px solid #ccc;
+     border-radius: 4px;
+     background-color: red;
+     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+   }
+   
+   .dateupdate::-webkit-calendar-header {
+     background-color: red;
+     border-bottom: 1px solid #ccc;
+     padding: 8px;
+     font-weight: bold;
+   }
+   
+   .dateupdate::-webkit-calendar-day {
+     color: #333;
+   }
+   
+   .dateupdate::-webkit-calendar-day[selected] {
+     background-color: green;
+     color: #fff;
+   }
+   
+   .dateupdate::-webkit-calendar-day[today] {
+     border: 1px solid yellow;
+   }
+   
+   .dateupdate::-webkit-calendar-footer {
+     background-color: #f2f2f2;
+     border-top: 1px solid #ccc;
+     padding: 8px;
+     text-align: right;
+   }

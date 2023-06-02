@@ -73,23 +73,34 @@ header{
      background-size: cover;
 }
 
-
+@media only screen and (max-width: 1024px){
+     .login-box{
+          left:30%;
+     }
+}
+@media only screen and (max-width: 768px){
+.login-box{
+     left:22%;
+}
+}
 @media only screen and (max-width: 425px){
-    .login{
-     height: 100vh;
-    }
-    
+   .login{
+     height: fit-content;
+   }
      header{
-      height:30vh;
+      height:300px;
 
      border-bottom-left-radius: 80px;
     }
     .login-box{
-     height:70vh;
      position: relative;
     left: 0;
     top:0;
     width: 100%;
+  
+    padding-bottom: 30px;
+    padding-left:20px;
+    padding-right: 20px;
     }
     .login-btn{
      width: 100%;
