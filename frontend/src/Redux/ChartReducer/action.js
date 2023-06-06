@@ -3,7 +3,7 @@ import * as types from "./actionType"
 
 const getChartData = () => (dispatch) => {
   dispatch({ type: types.GET_DATA_REQUEST })
-  return axios.get("http://localhost:7000/project/dashboard").then((r) => {
+  return axios.get("https://rich-erin-sturgeon-suit.cyclic.app/project/dashboard").then((r) => {
     dispatch({ type: types.GET_DATA_SUCCESS, payload: r.data })
 
   }).catch((e) => {
