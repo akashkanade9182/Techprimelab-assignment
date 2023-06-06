@@ -10,6 +10,8 @@ import { ReactComponent as Createicon } from "../assets/create-project.svg";
 import { ReactComponent as CreateActiveicon } from "../assets/create-project-active.svg";
 import { ChevronLeftIcon } from "@chakra-ui/icons"
 import { ReactComponent as Logoicon } from '../assets/Logo.svg';
+import {handleLogout} from "../Redux/AuthReducer/action";
+import { useDispatch } from 'react-redux';
 
 
 const pathname = ["/dashboard", "/projects", "/formpage"];
@@ -19,9 +21,11 @@ const Sidebar = ({ children }) => {
   const location = useLocation();
   const currentUrl = location.pathname;
   const [page,setPage]=useState(currentUrl.split("/")[1])
- 
+  const dispatch=useDispatch()
 
-
+const handleLog=()=>{
+  dispatch(handleLogout())
+}
 useEffect(()=>{
 
 },[])
@@ -58,7 +62,7 @@ useEffect(()=>{
           </div>
 
         </div>
-        <div className="logout-box">
+        <div onClick={handleLog} className="logout-box">
           <Logouticon />
         </div>
 
@@ -71,7 +75,7 @@ useEffect(()=>{
           </div>
           <div className="sidebar-logo">
             <div className='sidebar-logo-box'></div>
-            <div className="top-logout-box">
+            <div onClick={handleLog} className="top-logout-box">
             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-logout" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
   <path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" />

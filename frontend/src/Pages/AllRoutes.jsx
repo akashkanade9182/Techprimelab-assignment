@@ -5,13 +5,14 @@ import Formpage from './Formpage'
 import Projectlist from './Projectlist'
 import Login from './Login'
 import Sidebar from '../Components/Sidebar'
+import PrivateRoute from './PrivateRoute'
 const AllRoutes = () => {
   return (
      <Routes>
      <Route path="/" element={<Login/>} />
-     <Route path="/dashboard" element={<Sidebar><Dashboard/></Sidebar>} />
-     <Route path="/formpage" element={<Sidebar><Formpage /></Sidebar>} />
-     <Route path="/projects" element={<Sidebar><Projectlist/></Sidebar>} />
+     <Route path="/dashboard" element={<PrivateRoute><Sidebar><Dashboard/></Sidebar></PrivateRoute>} />
+     <Route path="/formpage" element={<PrivateRoute><Sidebar><Formpage /></Sidebar></PrivateRoute>} />
+     <Route path="/projects" element={<PrivateRoute><Sidebar><Projectlist/></Sidebar></PrivateRoute>} />
 
 
 </Routes>

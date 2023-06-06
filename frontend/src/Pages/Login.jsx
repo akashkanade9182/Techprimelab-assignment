@@ -4,6 +4,9 @@ import { Input,FormHelperText,FormErrorMessage,FormLabel,FormControl,InputGroup,
 import { ReactComponent as Showpassword } from '../assets/showpassword.svg';
 import { ReactComponent as Hidepassword } from '../assets/hide-password.svg';
 import { ReactComponent as Logoicon } from '../assets/Logo.svg';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { getLogin } from '../Redux/AuthReducer/action';
 
 const Login = () => {
      const [show, setShow] = useState(false)
@@ -11,13 +14,20 @@ const Login = () => {
      const[password,setPassword]=useState("")
      const[isEmail,setisEmail]=useState(false)
     const [isPassword,setisPassword]=useState(false);
-
+    const dispatch=useDispatch();
+    const navigate=useNavigate();
 const handleSubmit=()=>{
   if(email===""){
     setisEmail(true);
   }
   if(password===""){
     setisPassword(true)
+  }
+  if(email!=="" && password!==""){
+    let data={
+      email,password
+    }
+    dispatch(getLogin(data,navigate))
   }
 
 }

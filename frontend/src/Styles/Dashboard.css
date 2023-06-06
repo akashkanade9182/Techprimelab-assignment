@@ -1,43 +1,87 @@
+.dashboard{
+  width: 100%;
+  height:550px;
+  background-color:transparent ;
+}
+.dashboard-head{
+  width: 100%;
+  height:80px;
+  background-color: transparent;
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+  column-gap: 1.5rem;
+}
+.head-card{
+  height:100%;
+  background-color: white;
+border-radius: 5px;
+padding:5px 10px;
+text-align: left;
+border-left: 5px solid #0cc9e8;
+box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+}
+.head-card-title{
+  font-weight: 400;
+}
+.head-card-value{
+  font-size: 35px;
+  font-weight: bold;
+  color:#474d52
+}
+.chart-title{
+  text-align: left;
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
 
-   
-   .dateupdate {
-     appearance: none;
-     padding: 10px;
-     border: 1px solid #ccc;
-     border-radius: 4px;
-   }
-   
-   .dateupdate::-webkit-calendar-container {
-     font-family: Arial, sans-serif;
-     border: 1px solid #ccc;
-     border-radius: 4px;
-     background-color: red;
-     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-   }
-   
-   .dateupdate::-webkit-calendar-header {
-     background-color: red;
-     border-bottom: 1px solid #ccc;
-     padding: 8px;
-     font-weight: bold;
-   }
-   
-   .dateupdate::-webkit-calendar-day {
-     color: #333;
-   }
-   
-   .dateupdate::-webkit-calendar-day[selected] {
-     background-color: green;
-     color: #fff;
-   }
-   
-   .dateupdate::-webkit-calendar-day[today] {
-     border: 1px solid yellow;
-   }
-   
-   .dateupdate::-webkit-calendar-footer {
-     background-color: #f2f2f2;
-     border-top: 1px solid #ccc;
-     padding: 8px;
-     text-align: right;
-   }
+.chart-box{
+  width:50%;
+  height:400px;
+  margin-top: 20px;
+  border-radius: 20px;
+  padding:30px 30px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+
+}
+
+@media only screen and (max-width: 425px){
+  .dashboard{
+width: 95%;
+margin: auto;
+  }
+.dashboard-head{
+  height:70px;
+  grid-template-columns: repeat(5,120px);
+  overflow-x: scroll;
+}
+.dashboard-head::-webkit-scrollbar{
+  display:none;
+}
+.head-card-title{
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+.head-card-value{
+  font-size: 1.5rem;
+  font-weight: bold;
+  color:#474d52
+}
+.chart-title{
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+} 
+.chart-box{
+  width:100%;
+  height:350px;
+  
+}
+  
+
+}
+
+
+
