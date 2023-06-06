@@ -3,7 +3,7 @@ import * as types from "./actionType"
 
 const getProject = () => (dispatch) => {
   dispatch({ type: types.GET_PROJECT_REQUEST })
-  return axios.get("http://localhost:7000/project/getall").then((r) => {
+  return axios.get("https://rich-erin-sturgeon-suit.cyclic.app/project/getall").then((r) => {
     dispatch({ type: types.GET_PROJECT_SUCCESS, payload: r.data })
 
   }).catch((e) => {
@@ -14,7 +14,7 @@ const getProject = () => (dispatch) => {
 
 const getSearch=(payload)=>(dispatch)=>{
   dispatch({type:types.GET_SEARCH_REQUEST})
-  return axios.get("http://localhost:7000/project/search",{params:payload}).then((r) => {
+  return axios.get("https://rich-erin-sturgeon-suit.cyclic.app/project/search",{params:payload}).then((r) => {
     dispatch({ type: types.GET_PROJECT_SUCCESS, payload: r.data })
      console.log("work")
   }).catch((e) => {
@@ -29,7 +29,7 @@ const getSearch=(payload)=>(dispatch)=>{
 const updateProject=(id,payload,query)=>(dispatch)=>{
 
   // dispatch({type:types.UPDATE_PROJECT_REQUEST})
-  return axios.patch(`http://localhost:7000/project/update/${id}`,payload,{params:query}).then((r) => {
+  return axios.patch(`https://rich-erin-sturgeon-suit.cyclic.app/project/update/${id}`,payload,{params:query}).then((r) => {
 
     dispatch({ type: types.UPDATE_PROJECT_SUCCESS, payload: r.data })
 
