@@ -47,7 +47,7 @@ return (
         return (
           <button
             key={pageNumber}
-            className={pageNumber === currentPage ? 'pagebtn-active' : 'pagebtn-passive'}
+            className={pageNumber == currentPage ? 'pagebtn-active' : 'pagebtn-passive'}
             onClick={() =>handlePageChange(pageNumber)}
           >
             {pageNumber}

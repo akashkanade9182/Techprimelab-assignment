@@ -24,6 +24,7 @@ const handleChange=(e)=>{
 let query={};
 query.searchtext=word;
 sort && (query.sort=sort);
+page &&(query.page=page)
 console.log(query)
 setTimeout(()=>{
   dispatch(getSearch(query))
@@ -36,6 +37,7 @@ const handleSort=(e)=>{
   let query={};
 query.sort=e.target.value;
 word && (query.searchtext=word);
+page &&(query.page=page)
 console.log("dispatch start")
   dispatch(getSearch(query))
 
@@ -45,6 +47,7 @@ const handleUpdate=(id,payload)=>{
   let query={};
   sort && (query.sort=sort);
   word && (query.searchtext=word);
+  page &&(query.page=page)
 dispatch(updateProject(id,payload,query))
 }
 
@@ -68,7 +71,7 @@ dispatch(updateProject(id,payload,query))
         </div>
         <div className="sort-box">
           <Text> Sort By : </Text>
-          <Select w="auto" value={sort} onChange={(e) => handleSort(e)}>
+          <Select w="auto" id="sort-select" value={sort} onChange={(e) => handleSort(e)}>
           <option value="">select option</option>
             <option value="priority">Priority</option>
             <option value="location">Locaton</option>
