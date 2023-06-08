@@ -10,6 +10,8 @@ import PageBox from '../Components/PageBox'
 
 const Projectlist = () => {
   const [sort, setSort] = useState("");
+  const currentPage=useSelector(store=>store.AppReducer.currentPage)
+  const [page,setPage]=useState(currentPage)
   const[word,setWord]=useState("")
   const dispatch = useDispatch();
   const data = useSelector(store => store.AppReducer.data)
@@ -48,8 +50,9 @@ dispatch(updateProject(id,payload,query))
 
 
   useEffect(() => {
-    dispatch(getProject());
-  }, [])
+    dispatch(getProject(page));
+    console.log("pagelistpage",page)
+  }, [setPage,page])
 
 
   return (
@@ -120,7 +123,7 @@ dispatch(updateProject(id,payload,query))
           }
         </div>
         <div className="page-component">
-          <PageBox/>
+          <PageBox setPage={setPage}/>
 
         </div>
       </div>

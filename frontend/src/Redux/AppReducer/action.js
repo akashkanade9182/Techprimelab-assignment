@@ -1,9 +1,9 @@
 import axios from "axios"
 import * as types from "./actionType"
 
-const getProject = () => (dispatch) => {
+const getProject = (page) => (dispatch) => {
   dispatch({ type: types.GET_PROJECT_REQUEST })
-  return axios.get("https://rich-erin-sturgeon-suit.cyclic.app/project/getall").then((r) => {
+  return axios.get("https://rich-erin-sturgeon-suit.cyclic.app/project/getall",{params:{page}}).then((r) => {
     dispatch({ type: types.GET_PROJECT_SUCCESS, payload: r.data })
 
   }).catch((e) => {

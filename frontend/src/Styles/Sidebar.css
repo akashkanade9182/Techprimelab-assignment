@@ -128,6 +128,8 @@ background-color: white;
 .iconpad-box{
      width: 100%;
      height:100%;
+     border-top-left-radius: 40px;
+     border-top-right-radius: 40px;
 }
 .logout-box{
      display:none

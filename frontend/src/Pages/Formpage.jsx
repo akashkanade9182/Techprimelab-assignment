@@ -9,7 +9,7 @@ import {format,parse} from "date-fns"
 
 
 const postData=(payload)=>{
-     return axios.post("http://localhost:7000/project/add",payload)
+     return axios.post("https://rich-erin-sturgeon-suit.cyclic.app/project/add",payload)
 }
 
 
@@ -123,7 +123,7 @@ const Formpage = () => {
                     }
                </div>
 
-               <div className="gridbox">
+               <div className="form-grid-box">
                     <div>
                          <FormLabel fontSize="15px" color="#8a8a8a">Reason</FormLabel>
                          <Select value={reason} h="50px" border="0.5px solid #8a8a8a" onChange={(e) => setReason(e.target.value)} placeholder='Select option'>

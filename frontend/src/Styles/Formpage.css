@@ -1,10 +1,10 @@
 .formpage{
      width: 100%;
      border-radius: 15px;
-
    background-color: white;
      height:700px;
      padding:0 20px;
+
      box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
      
 }
@@ -26,7 +26,7 @@
      color:white;
      background-color: #025aab;
 }
-.gridbox{
+.form-grid-box{
      width: 80%;
      padding:5px 5px;
      display: grid;
@@ -73,51 +73,53 @@
      animation:s1 1s infinite; 
 }
 
- @keyframes s1 {to{transform: rotate(.5turn)}};
 
 
 @media only screen and (max-width: 425px){
-.formpage{
-     width: 95%;
-     padding-top: 0;
-     margin: auto;
-     border-radius: 15px;
-     height: fit-content;
-     padding-bottom: 30px;
-     background-color: white;
-     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;}
-.project-save-btn{
-     display: none;
+     .formpage{
+          width: 100%;
+          padding-top: 0;
+          margin: auto;
+          border-radius: 15px;
+          height: fit-content;
+          padding-bottom: 30px;
+          background-color: white;
+          box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+         
+     }
+     .title-box{
+          width: 100%;
+     }
+     .project-save-btn{
+          display: none;
+     }
+     .form-grid-box{
+          width: 100%;
+          grid-template-columns: repeat(1,1fr);
+          gap:20px 20px;
+          padding:0 0;
+     }
+     .small-gridbox{
+          width: 100%;
+          padding:0 0;
+          grid-template-columns: repeat(1,1fr);
+     
+     }
+     .small-gridbox div:first-child,.small-gridbox div:nth-child(2){
+          display: none;
+     }
+     .bottom-save-btn{
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height:35px;
+          border-radius: 25px;
+          color:white;
+          background-color: #025aab;
+          margin-top: 20px;
+     }
 }
-.title-input{
-     width: 100%;
-}
-.gridbox{
-     width: 100%;
-     grid-template-columns: repeat(1,1fr);
-     gap:20px 20px;
-     padding:0 0;
-}
-.small-gridbox{
-     width: 100%;
-     padding:0 0;
-     grid-template-columns: repeat(1,1fr);
 
-}
-.small-gridbox div:first-child,.small-gridbox div:nth-child(2){
-     display: none;
-}
-.bottom-save-btn{
-     width: 100%;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     height:35px;
-     border-radius: 25px;
-     color:white;
-     background-color: #025aab;
-     margin-top: 20px;
-}
+ @keyframes s1 {to{transform: rotate(.5turn)}};
 
-
-}
