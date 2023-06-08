@@ -43,6 +43,7 @@ const datasetTwo=useSelector(store=>store.ChartReducer.datasetTwo)
         barPercentage: 0.4, // Adjust the value to set the width of Dataset 1 bars
         categoryPercentage: 0.8, 
       },
+      
       {
         label: 'Dataset 2',
         data: datasetTwo,

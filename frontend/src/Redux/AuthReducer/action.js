@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 const getLogin = (payload, navigate) => (dispatch) => {
   dispatch({ type: types.LOGIN_REQUEST })
 
-  return axios.post("http://localhost:7000/projectuser/login", payload).then((r) => {
+  return axios.post("https://rich-erin-sturgeon-suit.cyclic.app/projectuser/login", payload).then((r) => {
     dispatch({type:types.LOGIN_SUCCESS})
     if(r.data.Success===true){
       navigate("/dashboard")

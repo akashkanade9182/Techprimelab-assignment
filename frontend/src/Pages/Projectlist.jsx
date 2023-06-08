@@ -3,7 +3,7 @@ import "../Styles/Projectlist.css"
 import { Select, Box, Text } from "@chakra-ui/react"
 import { useSelector, useDispatch } from "react-redux"
 
-import { getProject,getSearch,updateProject } from "../Redux/AppReducer/action"
+import { getProject,sortProject,getSearch,updateProject } from "../Redux/AppReducer/action"
 import Load from '../Components/Load'
 import PageBox from '../Components/PageBox'
 
@@ -29,11 +29,13 @@ setTimeout(()=>{
 }
 
 const handleSort=(e)=>{
+  console.log("sort start")
   setSort(e.target.value);
   let query={};
- word &&  (query.searchtext=word);
 query.sort=e.target.value;
-dispatch(getSearch(query))
+word && (query.searchtext=word);
+console.log("dispatch start")
+  dispatch(getSearch(query))
 
 }
 
@@ -64,10 +66,14 @@ dispatch(updateProject(id,payload,query))
         <div className="sort-box">
           <Text> Sort By : </Text>
           <Select w="auto" value={sort} onChange={(e) => handleSort(e)}>
+          <option value="">select option</option>
             <option value="priority">Priority</option>
             <option value="location">Locaton</option>
             <option value="reason">Reason</option>
             <option value="title">Project name</option>
+            <option value="type">Type</option>
+            <option value="division">Division</option>
+            <option value="category">category</option>
             <option value="department">Department</option>
 
           </Select>

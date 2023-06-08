@@ -1,5 +1,6 @@
 .sidebar{
      width: 100%;
+     height: auto;
      display: flex;
      background-color: #f2f4f6;
 }
@@ -12,12 +13,14 @@
 .iconpad-box{
      height: 90%;
      width: 100%;
+     background-color: white;
      display: flex;
      align-items: center;
 }
 .logout-box{
      height: 10%;
      width:100%;
+     background-color: white;
      display: flex;
      justify-content: space-around;
      align-items: center;
