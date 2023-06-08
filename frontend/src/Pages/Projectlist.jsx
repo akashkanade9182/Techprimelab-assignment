@@ -3,7 +3,7 @@ import "../Styles/Projectlist.css"
 import { Select, Box, Text } from "@chakra-ui/react"
 import { useSelector, useDispatch } from "react-redux"
 
-import { getProject,sortProject,getSearch,updateProject } from "../Redux/AppReducer/action"
+import { getProject,getSearch,updateProject } from "../Redux/AppReducer/action"
 import Load from '../Components/Load'
 import PageBox from '../Components/PageBox'
 

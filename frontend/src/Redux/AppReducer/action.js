@@ -38,6 +38,7 @@ const sortProject=(payload)=>(dispatch)=>{
 
 const updateProject=(id,payload,query)=>(dispatch)=>{
 
+  // dispatch({type:types.UPDATE_PROJECT_REQUEST})
   return axios.patch(`https://rich-erin-sturgeon-suit.cyclic.app/project/update/${id}`,payload,{params:query}).then((r) => {
 
     dispatch({ type: types.UPDATE_PROJECT_SUCCESS, payload: r.data })
@@ -84,4 +85,4 @@ const updateProject=(id,payload,query)=>(dispatch)=>{
 //     })
 // }
 
-export { getProject,getSearch,sortProject,updateProject}
+export { getProject,getSearch,updateProject}
