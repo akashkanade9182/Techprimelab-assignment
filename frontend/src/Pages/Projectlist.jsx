@@ -60,6 +60,7 @@ dispatch(updateProject(id,payload,query))
 
   return (
     <div className="project-list">
+      <div className="pp-box">
       <div className="feature-box">
         <div className="search-box">
           <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2.5" stroke="#b9bcbf" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -130,7 +131,7 @@ dispatch(updateProject(id,payload,query))
 
         </div>
       </div>
-
+      </div>
     </div>
   )
 }
