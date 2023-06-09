@@ -6,7 +6,7 @@ import { useSelector, useDispatch } from "react-redux"
 import { getProject,getSearch,updateProject } from "../Redux/AppReducer/action"
 import Load from '../Components/Load'
 import PageBox from '../Components/PageBox'
-
+import DrawerBox from '../Components/DrawerBox'
 
 const Projectlist = () => {
   const [sort, setSort] = useState("");
@@ -31,15 +31,18 @@ setTimeout(()=>{
 },1500)
 }
 
-const handleSort=(e)=>{
+const handleSort=(payload)=>{
   console.log("sort start")
-  setSort(e.target.value);
-  let query={};
-query.sort=e.target.value;
-word && (query.searchtext=word);
-page &&(query.page=page)
-console.log("dispatch start")
-  dispatch(getSearch(query))
+
+    setSort(payload);
+    let query={};
+  query.sort=payload;
+  word && (query.searchtext=word);
+  page &&(query.page=page)
+  console.log("dispatch start")
+    dispatch(getSearch(query))
+ 
+
 
 }
 
@@ -72,7 +75,7 @@ dispatch(updateProject(id,payload,query))
         </div>
         <div className="sort-box">
           <Text> Sort By : </Text>
-          <Select w="auto" id="sort-select" value={sort} onChange={(e) => handleSort(e)}>
+          <Select w="auto" id="sort-select" value={sort} onChange={(e) => handleSort(e.target.value)}>
           <option value="">select option</option>
             <option value="priority">Priority</option>
             <option value="location">Locaton</option>
@@ -85,6 +88,7 @@ dispatch(updateProject(id,payload,query))
 
           </Select>
         </div>
+        <DrawerBox handleSort={handleSort} setSort={setSort} />
       </div>
       <div className="tabel-box">
         <div className="heading-box">
