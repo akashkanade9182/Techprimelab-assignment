@@ -33,19 +33,25 @@ const datasetTwo=useSelector(store=>store.ChartReducer.datasetTwo)
 
   const labels = ['QLT', 'MAN', 'STO', 'HR', 'FIN', 'STR'];
 
+let percentage=[];
+labels.forEach((ele,index)=>{
+let per=datasetTwo[index]/datasetOne[index]
+percentage.push([`${(per*100).toFixed(2)}%`,labels[index]])
+})
+
  const data = {
-    labels,
+    labels:percentage,
     datasets: [
       {
-        label: 'Dataset 1',
+        label: 'total ',
         data: datasetOne,
         backgroundColor: '#025aab',
-        barPercentage: 0.4, // Adjust the value to set the width of Dataset 1 bars
+        barPercentage: 0.4, 
         categoryPercentage: 0.8, 
       },
       
       {
-        label: 'Dataset 2',
+        label: 'Closed',
         data: datasetTwo,
         backgroundColor: '#5aa647',
         barThickness: 10,

@@ -5,7 +5,7 @@ import { ReactComponent as Showpassword } from '../assets/showpassword.svg';
 import { ReactComponent as Hidepassword } from '../assets/hide-password.svg';
 import { ReactComponent as Logoicon } from '../assets/Logo.svg';
 import { useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { getLogin } from '../Redux/AuthReducer/action';
 
 const Login = () => {
@@ -14,6 +14,9 @@ const Login = () => {
      const[password,setPassword]=useState("")
      const[isEmail,setisEmail]=useState(false)
     const [isPassword,setisPassword]=useState(false);
+    const isError=useSelector(store=>store.AuthReducer.isError);
+    const isLoading=useSelector(store=>store.AuthReducer.isLoading)
+
     const dispatch=useDispatch();
     const navigate=useNavigate();
 const handleSubmit=()=>{
@@ -102,8 +105,20 @@ const handleHide=()=>{
      
      
     </FormControl>
- 
-    <button onClick={handleSubmit} className='login-btn'>Login</button>
+    {
+    isError?<h2 className="invalid-text-one" >Invalid credentials</h2>:<h2></h2>
+  }
+  {
+    isLoading? <div className="login-btn-load">
+      <div class="custom-login-loader"></div>
+    </div>:<button onClick={handleSubmit} className='login-btn'>Login</button>
+
+  }
+</div>
+<div>
+  {
+    isError?<h2 className="invalid-text-two" >Invalid credentials</h2>:<h2 className="invalid-text-two"></h2>
+  }
 </div>
 
     </div>

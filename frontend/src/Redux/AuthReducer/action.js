@@ -13,7 +13,6 @@ const getLogin = (payload, navigate) => (dispatch) => {
       navigate("/dashboard")
     }
     else{
-      alert(`${r.data.Message}`)
       dispatch({type:types.LOGIN_FAILURE})
     }
 
