@@ -131,7 +131,7 @@ dispatch(updateProject(id,payload,query))
           }
         </div>
         <div className="page-component">
-          <PageBox setPage={setPage}/>
+          <PageBox page={page} setPage={setPage}/>
 
         </div>
       </div>

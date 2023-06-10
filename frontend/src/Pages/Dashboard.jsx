@@ -46,15 +46,19 @@ percentage.push([`${(per*100).toFixed(2)}%`,labels[index]])
         label: 'total ',
         data: datasetOne,
         backgroundColor: '#025aab',
-        barPercentage: 0.4, 
-        categoryPercentage: 0.8, 
+        barPercentage: 0.5,
+        categoryPercentage: 0.5,
+        borderRadius: 10,
       },
       
       {
         label: 'Closed',
         data: datasetTwo,
         backgroundColor: '#5aa647',
-        barThickness: 10,
+        // barThickness: 10,
+        barPercentage: 0.5,
+        categoryPercentage: 0.5,
+        borderRadius: 15,
       },
     ],
   };
@@ -83,6 +87,13 @@ percentage.push([`${(per*100).toFixed(2)}%`,labels[index]])
         return percentage + '%';
       },
     },
+    plotOptions: {
+      bar: {
+        horizontal: false,
+        columnWidth: "35%",
+        endingShape: "rounded",
+      }
+    },
   
     scales: {
       x: {
@@ -106,6 +117,7 @@ percentage.push([`${(per*100).toFixed(2)}%`,labels[index]])
         beginAtZero: true,
       },
     },
+   
   };
 
   useEffect(()=>{

@@ -1,9 +1,9 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import "../Styles/PageBox.css"
+import { ArrowLeftIcon, ArrowRightIcon } from "@chakra-ui/icons";
 
-
-const PageBox = ({ setPage }) => {
+const PageBox = ({page, setPage }) => {
   const totalPages = useSelector(store => store.AppReducer.totalPages);
   const totalCount = useSelector(store => store.AppReducer.totalCount);
   const currentPage = useSelector(store => store.AppReducer.currentPage);
@@ -13,7 +13,7 @@ const PageBox = ({ setPage }) => {
     pageNumbers.push(i);
   }
 
-  const showButtons = 5; // Number of buttons to display at a time
+  const showButtons = 10; // Number of buttons to display at a time
   const halfButtons = Math.floor(showButtons / 2);
   const skipPages = 4 * (showButtons - 1);
 
@@ -36,11 +36,17 @@ const PageBox = ({ setPage }) => {
     console.log("check", pageNumber);
     setPage(pageNumber)
   }
-
+const handleNextpage=()=>{
+setPage(page+1)
+}
+const handlePrevpage=()=>{
+  setPage(page-1)
+}
 
 
 return (
   <div className="pagination">
+    <button onClick={handlePrevpage}><ArrowLeftIcon boxSize={"3"}/></button>
 
     {pageNumbers.map((pageNumber) => {
       if (pageNumber >= startPage && pageNumber <= endPage) {
@@ -57,6 +63,8 @@ return (
         return null; // Skip rendering the button
       }
     })}
+
+<button onClick={handleNextpage} style={{marginLeft:"10px"}}><ArrowRightIcon boxSize={"3"}/></button>
   </div>
 )
 
