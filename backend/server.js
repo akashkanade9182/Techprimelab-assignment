@@ -3,7 +3,7 @@ const cors = require("cors")
 
 const connection = require("./Config/db")
 const ProjectRoute=require("./Routes/Project.route.js")
-
+const projectuserRouter=require("./Routes/Projectuser.route")
 
 const app = express();
 app.use(express.json());
@@ -11,6 +11,7 @@ app.use(cors({
     origin: "*"
 }))
 app.use("/project",ProjectRoute)
+app.use("/projectuser",projectuserRouter)
 
 
 
