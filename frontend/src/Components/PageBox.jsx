@@ -46,7 +46,7 @@ const handlePrevpage=()=>{
 
 return (
   <div className="pagination">
-    <button onClick={handlePrevpage}><ArrowLeftIcon boxSize={"3"}/></button>
+    <button disabled={currentPage==1?true:false}  onClick={handlePrevpage}><ArrowLeftIcon boxSize={"3"}/></button>
 
     {pageNumbers.map((pageNumber) => {
       if (pageNumber >= startPage && pageNumber <= endPage) {
@@ -64,7 +64,7 @@ return (
       }
     })}
 
-<button onClick={handleNextpage} style={{marginLeft:"10px"}}><ArrowRightIcon boxSize={"3"}/></button>
+<button disabled={currentPage==totalPages?true:false}  onClick={handleNextpage} style={{marginLeft:"10px"}}><ArrowRightIcon boxSize={"3"}/></button>
   </div>
 )
 

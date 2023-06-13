@@ -7,6 +7,7 @@ import { getProject,getSearch,updateProject } from "../Redux/AppReducer/action"
 import Load from '../Components/Load'
 import PageBox from '../Components/PageBox'
 import DrawerBox from '../Components/DrawerBox'
+import ProjectDate from '../Components/ProjectDate'
 
 const Projectlist = () => {
   const [sort, setSort] = useState("");
@@ -109,7 +110,7 @@ dispatch(updateProject(id,payload,query))
               <div key={ele._id} className="card">
                 <div className="card-column">
                   <h1 className="projecttitle">{ele.title}</h1>
-                  <h1 className="projectdate">{ele.startDate} to {ele.endDate}</h1>
+                  <ProjectDate startDate={ele.startDate} endDate={ele.endDate}/>
                 </div>
                 <div className="card-column" id="status-column-first">{ele.status}</div>
 

@@ -61,22 +61,22 @@ const Formpage = () => {
                setisTitle(true)
           }
           else{
-               setLoad(true);
-               if(startDate){
-                    var sdate = parse(startDate, 'yyyy-MM-dd', new Date());
-                    var modeStartdate=format(sdate, 'MMMM d, yyyy');
-               }
-               if(endDate){
-                    var edate = parse(endDate, 'yyyy-MM-dd', new Date());
-                    var modeEnddate=format(edate, 'MMMM d, yyyy');
+               // setLoad(true);
+               // if(startDate){
+               //      var sdate = parse(startDate, 'yyyy-MM-dd', new Date());
+               //      var modeStartdate=format(sdate, 'MMMM d, yyyy');
+               // }
+               // if(endDate){
+               //      var edate = parse(endDate, 'yyyy-MM-dd', new Date());
+               //      var modeEnddate=format(edate, 'MMMM d, yyyy');
      
-               }
+               // }
               let data={
                title,
                reason,type,division,
                category,priority,department,
-               startDate:modeStartdate,
-               endDate:modeEnddate,
+               startDate,
+               endDate,
                location
               }
             
